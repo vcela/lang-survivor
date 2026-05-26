@@ -23,7 +23,7 @@ $jsVersion = (string) filemtime(__DIR__ . '/assets/js/app.js');
             <div class="brand-card">
                 <div>
                     <p class="eyebrow" data-i18n="brand.eyebrow">Survival phrasebook</p>
-                    <h1><a class="brand-home-link" href="#home" data-route-link><?php echo htmlspecialchars($appName, ENT_QUOTES, 'UTF-8'); ?></a></h1>
+                    <h1><a class="brand-home-link" href="#home" data-route-link><?php echo htmlspecialchars($appName, ENT_QUOTES, 'UTF-8'); ?><span id="brand-lang-suffix" class="brand-lang-suffix"></span></a></h1>
                 </div>
                 <p class="brand-copy" data-i18n="brand.copy">Clear phrases, short lessons and quick revisions for everyday life abroad.</p>
                 <div class="brand-card-footer">
@@ -109,7 +109,7 @@ $jsVersion = (string) filemtime(__DIR__ . '/assets/js/app.js');
 
         <main class="content">
             <div class="mobile-app-header">
-                <a class="mobile-home-brand brand-home-link" href="#home" data-route-link><?php echo htmlspecialchars($appName, ENT_QUOTES, 'UTF-8'); ?></a>
+                <a class="mobile-home-brand brand-home-link" href="#home" data-route-link><?php echo htmlspecialchars($appName, ENT_QUOTES, 'UTF-8'); ?><span id="brand-lang-suffix-mobile" class="brand-lang-suffix"></span></a>
                 <a class="primary-link compact-link" href="#practice" data-route-link data-i18n="brand.startPractice">Lekce</a>
             </div>
 

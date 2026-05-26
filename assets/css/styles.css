@@ -146,6 +146,11 @@ select {
     transition: color 140ms ease, opacity 140ms ease;
 }
 
+.brand-lang-suffix {
+    opacity: 0.5;
+    font-weight: 400;
+}
+
 .brand-home-link:hover,
 .brand-home-link.is-active {
     color: var(--accent);

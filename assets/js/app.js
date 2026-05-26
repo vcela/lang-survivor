@@ -12,6 +12,25 @@ import { initSaved, renderSaved } from "./modules/saved.js";
 import { initProgress, renderProgress, renderDailyGoal } from "./modules/progress.js";
 import { initOnboarding, shouldShowOnboarding, showOnboarding } from "./modules/onboarding.js";
 
+const LANG_NATIVE_NAMES = {
+    it: "Italiano",
+    es: "Español",
+    en: "English",
+    cs: "Čeština",
+    th: "ภาษาไทย",
+    vi: "Tiếng Việt",
+    id: "Bahasa Indonesia",
+    ja: "日本語",
+    de: "Deutsch",
+};
+
+function updateBrandName() {
+    const suffix = LANG_NATIVE_NAMES[state.langs.target] ?? "";
+    const text = suffix ? " " + suffix : "";
+    document.getElementById("brand-lang-suffix").textContent = text;
+    document.getElementById("brand-lang-suffix-mobile").textContent = text;
+}
+
 migrateLegacyStorage();
 initialize();
 
@@ -35,6 +54,7 @@ async function initialize() {
     populatePracticePack();
     populateLanguagePickers();
     rebuildPracticeQueue();
+    updateBrandName();
     renderAll();
     handleRoute();
 
@@ -51,6 +71,7 @@ async function handleLangChange({ kind }) {
         populateLanguagePickers();
     }
     rebuildPracticeQueue();
+    updateBrandName();
     renderAll();
 }
 
@@ -60,6 +81,7 @@ async function handleOnboardingComplete() {
     populatePracticePack();
     populateLanguagePickers();
     rebuildPracticeQueue();
+    updateBrandName();
     renderAll();
 }
 
